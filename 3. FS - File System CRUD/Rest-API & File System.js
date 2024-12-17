@@ -16,7 +16,7 @@ const writeData = (data) => {
   // 파일을 동기적으로 쓰는 함수 (입력한건 모두 처리해야 됨)
   fs.writeFileSync( 
     FILE_PATH, 
-    JSON.stringify(data, null, 2), // JSON 형식의 String으로 변환환
+    JSON.stringify(data, null, 2), // JSON 형식의 String으로 변환
      'utf8'); 
 };
 
