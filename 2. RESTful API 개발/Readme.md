@@ -9,38 +9,20 @@ Express.js를 사용하여 기본적인 CRUD 기능을 제공하는 RESTful API�
 - Express.js 설치 및 기본 사용법 익히기
 - RESTful API의 기본 구조 이해
 
-```jsx
-// rest-api.js
-const express = require('express');
-const app = express();
-app.use(express.json());
+### 테스트
 
-let items = [];
+- 터미널(bash, cmd, powershell) 실행
+- `node rest-api.js`
+- Postman이나 Thunder Client(vscode), HTTP Client(InteliJ) 등을 이용해 HTTP 요청 보내기
 
-app.get('/items', (req, res) => {
-  res.json(items);
-});
-
-app.post('/items', (req, res) => {
-  const item = req.body;
-  items.push(item);
-  res.status(201).json(item);
-});
-
-app.put('/items/:id', (req, res) => {
-  const id = parseInt(req.params.id, 10);
-  const item = req.body;
-  items[id] = item;
-  res.json(item);
-});
-
-app.delete('/items/:id', (req, res) => {
-  const id = parseInt(req.params.id, 10);
-  items.splice(id, 1);
-  res.status(204).send();
-});
-
-app.listen(3000, () => {
-  console.log('API server running at <http://localhost:3000>');
-});
-```
+  - GET `http://localhost:3000/items`
+  - POST `http://localhost:3000/items`
+    - body (json): { "id": "1234" }
+  - PUT `http://localhost:3000/items/<index>`
+    - body (json): { "id": "4321" }
+  - DELETE `http://localhost:3000/items/<index>`
+### 결과
+  ![GET](./image/GET-items.png)
+  ![POST](./image/POST-items.png)
+  ![PUT](./image/PUT-items.png)
+  ![DELETE](./image/DELETE-items.png)
