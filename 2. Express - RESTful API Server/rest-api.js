@@ -1,7 +1,13 @@
 // node rest-api.js 
 const express = require('express');
 const app = express();
+
+app.listen(3000, () => {
+  console.log('API server running at <http://localhost:3000>');
+});
+
 app.use(express.json());
+
 
 let items = [];
 
@@ -10,7 +16,7 @@ app.get('/items', (req, res) => {
 });
 
 app.post('/items', (req, res) => {
-  const item = req.body; //{}
+  const item = req.body;
   items.push(item);
   res.status(201).json(item);
 });
@@ -28,6 +34,3 @@ app.delete('/items/:id', (req, res) => {
   res.status(204).send();
 });
 
-app.listen(3000, () => {
-  console.log('API server running at <http://localhost:3000>');
-});
