@@ -1,14 +1,18 @@
 # 4. 비동기 프로그래밍
 
-### Lab 설명
-
-콜백, 프로미스, async/await를 사용하여 비동기 작업을 처리하는 방법을 실습합니다.
-
-### 목표
-
-- Node.js의 비동기 프로그래밍 패턴 이해
-- 콜백, 프로미스, async/await 사용법 익히기
-
 ### 테스트
+- `node async-programming.js`
 
 ### 결과
+```bash
+콜백함수 호출
+콜백함수 내부
+프로미스 호출
+프로미스 내부
+Async 호출
+비동기 함수 내부
+프로미스 내부
+콜백함수 응답: Data fetched with callback
+프로미스 응답: Data fetched with promise
+Await 응답: 프로미스 응답: Data fetched with promise
+```
