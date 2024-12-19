@@ -2,7 +2,7 @@ tinymce.init({
   selector: '#editor',
   height: 500,
   menubar: false,
-  brand: false,
+  branding: false,
   plugins:  ['anchor','autolink','charmap','codesample',
               'emoticons','image','link','lists','media',
               'searchreplace','table','visualblocks','wordcount',
